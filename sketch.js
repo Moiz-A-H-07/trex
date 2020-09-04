@@ -41,13 +41,13 @@ function preload(){
 function setup() {
   createCanvas(600, 500);
   
-  trex = createSprite(50,380,20,50);
+  trex = createSprite(50,windowHeight-30,20,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("trex_collided",trex_collided);
   trex.scale = 0.5;
   trex.setCollider("circle",0,0,40);
   
-  ground = createSprite(200,380,400,20);
+  ground = createSprite(200,windowHeight-20,400,20);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   
@@ -128,7 +128,7 @@ function draw() {
 
 function spawnObstacles(){
  if (frameCount % 60 === 0){
-   var obstacle = createSprite(400,365,10,40);
+   var obstacle = createSprite(400,windowHeight-30,10,40);
    obstacle.velocityX = -(6+score/100);
 
    
